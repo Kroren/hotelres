@@ -41,7 +41,7 @@ public class Hotel {
         return rm;
     }
 
-    public static void listavai(Hotel hotel){ //list available rooms, available to guest and employees
+    public static void listavai(Hotel hotel){ //list available rooms - Guest and Employee
         System.out.print("\t\tAvailable Rooms\t\t\n");
         System.out.print("-----------------------------------------------\n");
         for (int i = 100; i < 150; i++) {
