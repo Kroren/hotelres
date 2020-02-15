@@ -61,7 +61,8 @@ public class Main {
         // Login as user
         System.out.println("\n1) Check rooms available");
         System.out.println("2) Logout");
-
+        boolean repeatMenu = true;
+        while(repeatMenu){
         try {
             int choice = input.nextInt();
             // run methods based on the choice.
@@ -69,12 +70,14 @@ public class Main {
                 case 1:
                     Hotel.listavai(hotel);
                     break;
+                case 2:
+                    repeatMenu = false;
                 default:
                     System.out.println("Invalid Choice.");
             }
         }
         catch(Exception IOException) {
-
+        }
         }
     }
 
