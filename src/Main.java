@@ -2,25 +2,25 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    static Hotel hotel = new Hotel();
     // Main class
     public static void main(String args[]) {
+        Hotel hotel = new Hotel();
         Scanner input = new Scanner(System.in);
         // Main menu, logins, etc
         boolean repeatMenu = true;
-        while(repeatMenu){
+        while (repeatMenu) {
             System.out.println("\nMain menu");
             System.out.println("1) Guest Login");
             System.out.println("2) Employee Login");
             System.out.println("3) Exit");
             try {
                 int menuChoice = input.nextInt();
-                switch(menuChoice) {
+                switch (menuChoice) {
                     case 1:
-                        guestLogin(input);
+                        guestLogin(input, hotel);
                         break;
                     case 2:
-                        employeeLogin(input);
+                        employeeLogin(input, hotel);
                         break;
                     case 3:
                         repeatMenu = false;
@@ -28,60 +28,60 @@ public class Main {
                     default:
                         System.out.println("Invalid Choice.");
                 }
-            }
-            catch(Exception IOException){
-
+            } catch (Exception IOException) {
+                System.out.println("There was an error");
             }
         }
     }
 
-    public static void employeeLogin(Scanner input) {
+    public static void employeeLogin(Scanner input, Hotel hotel) {
         String password = "password";
         System.out.println("Welcome employee,");
         System.out.print("Please enter your login password: ");
         String passwordCheck = input.next();
 
-        if (passwordCheck == password) {
-            employeeMenu(input);
+        if (passwordCheck.equals(password)) {
+            employeeMenu(input, hotel);
         }
     }
 
-    public static void guestLogin(Scanner input) {
+    public static void guestLogin(Scanner input, Hotel hotel) {
         String password = "password";
         System.out.println("Welcome guest,");
         System.out.print("Please enter your login password: ");
         String passwordCheck = input.next();
 
-        if (passwordCheck == password) {
-            guestMenu(input);
+        if (passwordCheck.equals(password)) {
+            guestMenu(input, hotel);
         }
     }
 
-    public static void guestMenu(Scanner input) {
+    public static void guestMenu(Scanner input, Hotel hotel) {
         // Login as user
         System.out.println("\n1) Check rooms available");
         System.out.println("2) Logout");
         boolean repeatMenu = true;
-        while(repeatMenu){
-        try {
-            int choice = input.nextInt();
-            // run methods based on the choice.
-            switch(choice) {
-                case 1:
-                    Hotel.listavai(hotel);
-                    break;
-                case 2:
-                    repeatMenu = false;
-                default:
-                    System.out.println("Invalid Choice.");
+        while (repeatMenu) {
+            try {
+                int choice = input.nextInt();
+                // run methods based on the choice.
+                switch (choice) {
+                    case 1:
+                        Hotel.listavai(hotel);
+                        break;
+                    case 2:
+                        repeatMenu = false;
+                    default:
+                        System.out.println("Invalid Choice.");
+                }
+            } catch (Exception IOException) {
+                System.out.println("There was an error");
             }
-        }
-        catch(Exception IOException) {
-        }
         }
     }
 
-    public static void employeeMenu(Scanner input) {
+
+    public static void employeeMenu(Scanner input, Hotel hotel) {
         System.out.println("\n1) Check rooms available");
         System.out.println("2) Check occupied rooms");
         System.out.println("3) Check closed rooms");
@@ -130,6 +130,7 @@ public class Main {
             }
         }
         catch(Exception IOException) {
+            System.out.println("There was an error");
         }
         }
     }
