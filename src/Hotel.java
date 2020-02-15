@@ -11,7 +11,7 @@ public class Hotel {
             for (int i = 100; i < 150; i++) {
 
                 rooms.add(new Room(i, true, true));
-                System.out.println(i+", ");
+                //System.out.println(i+", ");
             }
         }
         catch(Exception IOException){
