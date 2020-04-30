@@ -1,6 +1,8 @@
+package Hotel.Package;
+
 public class Room {
     // this represents the room object and the properties of the room.
-    public int number;
+    public final int number;
     public boolean vaccancy;
     public boolean open;
     public String Guest;
