@@ -23,10 +23,11 @@ public class Hotel {
         // Add rooms to the hotel
     }
 
-    public void changeVacc(Hotel hotel, int rmNumber) { //employee accessible
+    public void changeVacc(int rmNumber) { //employee accessible
         // Change vaccancy on selected room
+        rmNumber = rmNumber - 100;
         Scanner sc = new Scanner(System.in);
-        Room rm = hotel.rooms.get(rmNumber);
+        Room rm = rooms.get(rmNumber);
         if (rm.vaccancy){ //mark the room as occupied
             rm.vaccancy = false;
             System.out.println("Enter Guest name: ");
@@ -38,9 +39,10 @@ public class Hotel {
         }
     }
 
-    public void closeRoom(Hotel hotel, int rmNumber) { //employee accessible
+    public void closeRoom(int rmNumber) { //employee accessible
         // Mark a room as closed or open
-        Room rm = hotel.rooms.get(rmNumber);
+        rmNumber = rmNumber - 100;
+        Room rm = rooms.get(rmNumber);
         if (rm.open){ //close the room
             rm.open = false;
         }

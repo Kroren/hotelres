@@ -27,10 +27,10 @@ public class HotelFacade {
     }
 
     public void changeVaccency(int rmNum) {
-        hotel0.changeVacc(hotel0, rmNum);
+        hotel0.changeVacc(rmNum);
     }
 
     public void closeRoom(int rmNum) {
-        hotel0.closeRoom(hotel0, rmNum);
+        hotel0.closeRoom(rmNum);
     }
 }

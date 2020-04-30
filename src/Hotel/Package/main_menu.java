@@ -34,10 +34,11 @@ public class main_menu {
 
     public void guestMenu(Scanner input) {
         // Login as user
-        System.out.println("\n1) Check rooms available");
-        System.out.println("2) Logout");
+
         boolean repeatMenu = true;
         while (repeatMenu) {
+            System.out.println("\n1) Check rooms available");
+            System.out.println("2) Logout");
             try {
                 int choice = input.nextInt();
                 // run methods based on the choice.
@@ -59,14 +60,14 @@ public class main_menu {
 
 
     public void employeeMenu(Scanner input) {
-        System.out.println("\n1) Check rooms available");
-        System.out.println("2) Check occupied rooms");
-        System.out.println("3) Check closed rooms");
-        System.out.println("4) Edit rooms");
-        System.out.println("5) Logout");
 
         boolean repeatMenu = true;
         while(repeatMenu){
+            System.out.println("\n1) Check rooms available");
+            System.out.println("2) Check occupied rooms");
+            System.out.println("3) Check closed rooms");
+            System.out.println("4) Edit rooms");
+            System.out.println("5) Logout");
             try {
                 int choice = input.nextInt();
                 // run methods based on the choice.
