@@ -3,7 +3,17 @@ package Hotel.Package;
 import Hotel.Package.HotelFacade;
 import java.util.Scanner;
 
-public class main_menu {
+// Creates an interface for the functions provided to the user in main_menu()
+interface MenuFunctions {
+    // All function will take a Scanner object.
+    void employeeLogin(Scanner i);
+    void guestLogin(Scanner i);
+    void guestMenu(Scanner i);
+    void employeeMenu(Scanner i);
+}
+
+// the class providing the functions for the user cases, implementing Menufunctions
+public class main_menu implements MenuFunctions {
     private HotelFacade facade; //Creates the facade design pattern class.
 
     public main_menu(){
@@ -14,6 +24,7 @@ public class main_menu {
             IOException.printStackTrace();
         }
     }
+
 
     public void employeeLogin(Scanner input) {
         String password = "password";
